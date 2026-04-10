@@ -1,5 +1,5 @@
 
-# **Projeto:** [nome do projeto da lista]
+# **Projeto:** [LookDay]
 ### **Problema que resolve:**
 O Look Day é um sistema simples que sugere a roupa ideal para o dia com base nas condições climáticas da cidade informada pelo usuário. O objetivo é facilitar decisões do dia a dia, utilizando dados externos e uma lógica inteligente de recomendação.
 
