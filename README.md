@@ -11,8 +11,20 @@ O Look Day é um sistema simples que sugere a roupa ideal para o dia com base na
 | [Murilo Boschiero] | [@7JustAguy7] |
 
 ## Arquitetura
-> *A ser preenchido na Aula 6*
 
+```mermaid
+flowchart TD
+    A[Usuário digita cidade] --> B[Frontend]
+    B --> C[API OpenWeather]
+    C --> D[Dados de clima]
+
+    D --> E[Processamento]
+    E --> F[IA - sugestão de roupa]
+
+    F --> G[Resposta formatada]
+    G --> H[Exibição na tela]
+    H --> I[Notificação ao usuário]
+```
 ⸻
 
 Objetivo
