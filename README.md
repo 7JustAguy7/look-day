@@ -1,8 +1,8 @@
 
 # **Projeto:** [nome do projeto da lista]
-### **Problema que resolve:** [
+### **Problema que resolve:**
 O Look Day é um sistema simples que sugere a roupa ideal para o dia com base nas condições climáticas da cidade informada pelo usuário. O objetivo é facilitar decisões do dia a dia, utilizando dados externos e uma lógica inteligente de recomendação.
-]
+
 ## Integrantes
 | Nome | GitHub |
 |------|--------|
@@ -57,13 +57,6 @@ Exemplo de Regras
 Integrações
 	•	API de clima (OpenWeather)
 	•	Sistema de notificação (alerta na aplicação ou navegador)
-
-⸻
-
-Integrantes
-	•	Nome 1
-	•	Nome 2
-	•	Nome 3
 
 ⸻
 
