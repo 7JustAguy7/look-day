@@ -1,0 +1,136 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Prompt",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "What's your city ?"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8f269ce3-c0ba-4ee4-8c49-8eb1fd966641",
+      "name": "On form submission",
+      "webhookId": "bcb821c2-ec44-4e87-aa4d-2eee8f822e91"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.positionstack.com/v1/forward?access_key=423390cecc201040996d131f20910596&query={{ $json['What\\'s your city ?'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "c394b7f4-cdf4-49e0-bc0c-4f125e942dc8",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=What clothes should i use today for my wheater: temperature {{ $json.current.temperature }}, time: {{ $json.current.observation_time }}? give me a full look: top, bottom, jacket?, foot, acessories."
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        672,
+        0
+      ],
+      "id": "6c65f272-77d9-424e-af0c-19d7e1747721",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "9OsddWHAokArnmmQ",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.weatherstack.com/current?access_key=b019eb1ab3936243ef5ccf7a4dfe71f1&query={{ $json.data[0].name }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "d2951cc6-b5a3-49b5-b4ca-db00342d26a0",
+      "name": "HTTP Request1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "52a1fab9-6e1b-415c-8ee3-6280ed448fff",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9967f85f130685570ecd2c5d87e926a280fa6e02dff23802f501a291069a6b8c"
+  },
+  "id": "ni2dfHg1ldWeIEda",
+  "tags": []
+}
