@@ -15,7 +15,7 @@ O Look Day é um sistema simples que sugere a roupa ideal para o dia com base na
 ```mermaid
 flowchart TD
     A[Usuário digita cidade] --> B[Frontend]
-    B --> C[API OpenWeather]
+    B --> C[APIs PositionStack/WeatherStack]
     C --> D[Dados de clima]
 
     D --> E[Processamento]
@@ -44,7 +44,7 @@ Funcionalidades
 Tecnologias Utilizadas
 	•	Frontend: (definir depois – ex: HTML/CSS/JS ou React)
 	•	Backend: (definir depois – ex: Node.js)
-	•	API externa: OpenWeather API
+	•	API externa: PositionStack / WeatherStack API
 	•	IA: Lógica simples de decisão baseada em temperatura e clima
 
 ⸻
@@ -67,7 +67,7 @@ Exemplo de Regras
 ⸻
 
 Integrações
-	•	API de clima (OpenWeather)
+	•	API de clima (PositionStack / WeatherStack)
 	•	Sistema de notificação (alerta na aplicação ou navegador)
 
 ⸻
