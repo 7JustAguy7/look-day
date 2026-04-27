@@ -19,9 +19,9 @@
         0,
         0
       ],
-      "id": "8f269ce3-c0ba-4ee4-8c49-8eb1fd966641",
+      "id": "af57e4bd-8373-460b-869f-cc390301db6a",
       "name": "On form submission",
-      "webhookId": "bcb821c2-ec44-4e87-aa4d-2eee8f822e91"
+      "webhookId": "95604e06-0e05-404c-a5e7-45c8fa041a71"
     },
     {
       "parameters": {
@@ -34,16 +34,16 @@
         208,
         0
       ],
-      "id": "c394b7f4-cdf4-49e0-bc0c-4f125e942dc8",
+      "id": "876f3210-fec8-4d30-9f77-b56b2a922f2e",
       "name": "HTTP Request"
     },
     {
       "parameters": {
         "modelId": {
           "__rl": true,
-          "value": "models/gemini-2.5-flash",
+          "value": "models/gemma-4-26b-a4b-it",
           "mode": "list",
-          "cachedResultName": "models/gemini-2.5-flash"
+          "cachedResultName": "models/gemma-4-26b-a4b-it"
         },
         "messages": {
           "values": [
@@ -61,11 +61,11 @@
         672,
         0
       ],
-      "id": "6c65f272-77d9-424e-af0c-19d7e1747721",
+      "id": "8d9a1f95-5503-4fcb-94db-77974cfbd0b7",
       "name": "Message a model",
       "credentials": {
         "googlePalmApi": {
-          "id": "9OsddWHAokArnmmQ",
+          "id": "IldsbOIOz9dDvob6",
           "name": "Google Gemini(PaLM) Api account"
         }
       }
@@ -81,7 +81,7 @@
         416,
         0
       ],
-      "id": "d2951cc6-b5a3-49b5-b4ca-db00342d26a0",
+      "id": "21c50dd8-077b-4ab8-9a42-65504093950d",
       "name": "HTTP Request1"
     }
   ],
@@ -126,11 +126,11 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "52a1fab9-6e1b-415c-8ee3-6280ed448fff",
+  "versionId": "1f26def9-722f-470e-a5dc-2f37f5c953ab",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "9967f85f130685570ecd2c5d87e926a280fa6e02dff23802f501a291069a6b8c"
+    "instanceId": "96867a310af3f2714f43cc3cf24388478e827b7e135f8b7ce2449ff54a7ba494"
   },
-  "id": "ni2dfHg1ldWeIEda",
+  "id": "iwlzuCpDe5MyOgmC",
   "tags": []
 }
