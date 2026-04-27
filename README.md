@@ -13,17 +13,49 @@ O Look Day é um sistema simples que sugere a roupa ideal para o dia com base na
 ## Arquitetura
 
 ```mermaid
+---
+config:
+  layout: elk
+---
 flowchart TD
-    A[Usuário digita cidade] --> B[Frontend]
-    B --> C[APIs PositionStack/WeatherStack]
-    C --> D[Dados de clima]
+    subgraph Frontend[" Frontend do Projeto"]
+        A[" Usuário digita cidade"]
+        B[" Interface coleta entrada"]
+    end
 
-    D --> E[Processamento]
-    E --> F[IA - sugestão de roupa]
+    subgraph Backend[" Backend / n8n Workflow"]
+        C[" HTTP Request (PositionStack)<br/>→ Coordenadas da cidade"]
+        D[" HTTP Request (WeatherStack)<br/>→ Dados de clima atuais"]
+        E[" IA - Google Gemini<br/>→ Sugestão de roupa com base no clima"]
+        F[" Resposta formatada<br/>→ JSON com look completo"]
+    end
 
-    F --> G[Resposta formatada]
-    G --> H[Exibição na tela]
-    H --> I[Notificação ao usuário]
+    subgraph Output[" Resultado para o usuário"]
+        G[" Exibição na tela"]
+        H[" Notificação ao usuário"]
+    end
+
+    A --> B --> C
+    C --> D --> E --> F --> G --> H
+
+    classDef indigo stroke:#818cf8,fill:#eef2ff;
+    classDef cyan stroke:#22d3ee,fill:#ecfeff;
+    classDef sky stroke:#38bdf8,fill:#f0f9ff;
+    classDef violet stroke:#a78bfa,fill:#f5f3ff;
+    classDef fuchsia stroke:#e879f9,fill:#fdf4ff;
+    classDef yellow stroke:#facc15,fill:#fefce8;
+    classDef orange stroke:#fb923c,fill:#fff7ed;
+    classDef green stroke:#4ade80,fill:#f0fdf4;
+
+    class Frontend indigo;
+    class Backend sky;
+    class Output orange;
+
+    class A,B indigo;
+    class C,D sky;
+    class E fuchsia;
+    class F yellow;
+    class G,H orange;
 ```
 ⸻
 
@@ -42,8 +74,8 @@ Funcionalidades
 ⸻
 
 Tecnologias Utilizadas
-	•	Frontend: (definir depois – ex: HTML/CSS/JS ou React)
-	•	Backend: (definir depois – ex: Node.js)
+	•	Frontend:
+	•	Backend:
 	•	API externa: PositionStack / WeatherStack API
 	•	IA: Lógica simples de decisão baseada em temperatura e clima
 
@@ -74,4 +106,4 @@ Integrações
 
 Status do Projeto
 
-Em desenvolvimento – Setup inicial do projeto.
+Em desenvolvimento – Atividade 5 e 6: Github e Fluxo N8N com Gemini.
